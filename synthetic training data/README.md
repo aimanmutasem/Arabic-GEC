@@ -40,7 +40,7 @@ SRC = Field(tokenize= normalizeString, init_token='<sos>', eos_token='<eos>',  b
 TRG = Field(tokenize= normalizeString, init_token='<sos>', eos_token='<eos>',  batch_first=True) 
 ```
 
-Next, load the dataset and build the vocabulary:
+Next, build the vocabulary and load the dataset:
 
 ````py
 SRC.build_vocab(train_data, min_freq = 2)
@@ -49,4 +49,3 @@ TRG.build_vocab(train_data, min_freq = 2)
 train_data, valid_data = TabularDataset.splits(path='../data/',train='AGEC_Training_set.csv',
     validation='AGEC_development_set.csv' , format='csv',
     fields=[('src', SRC), ('trg', TRG)], skip_header=True) 
-```
