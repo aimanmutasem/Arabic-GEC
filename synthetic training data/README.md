@@ -5,7 +5,20 @@ The constructed training and development sets are available in .csv format in th
 
 [AGEC_development_set.csv - 676 MB](https://drive.google.com/file/d/1_6YFDlSkR7ifJ0P2DLuysKzrHBzCYnit/view?usp=sharing)
 
-# Load data
+# Preparing the Data
+
+Import all the required modules and packages.
+ 
+```import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torchtext.data import TabularDataset, Field, Iterator, BucketIterator, ReversibleField
+
+import pyarabic.araby as araby
+import pyarabic.number as number
+```
+Create the tokenizer using bpemb as belllow:
 
 ```import torch
 import torch.nn as nn
@@ -15,4 +28,22 @@ from torchtext.data import TabularDataset, Field, Iterator, BucketIterator, Reve
 
 import pyarabic.araby as araby
 import pyarabic.number as number
+```
+
+Then create fields, the model expects data to be fed with in the batch dimension first, so we use batch_first = True:
+
+```import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torchtext.data import TabularDataset, Field, Iterator, BucketIterator, ReversibleField
+
+import pyarabic.araby as araby
+import pyarabic.number as number
+```
+
+Next, load the dataset and build the vocabulary:
+
+```SRC.build_vocab(train_data, min_freq = 2)
+TRG.build_vocab(train_data, min_freq = 2)
 ```
