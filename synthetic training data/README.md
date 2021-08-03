@@ -6,3 +6,12 @@ The constructed training and development sets are available in .csv format in th
 [AGEC_development_set.csv - 676 MB](https://drive.google.com/file/d/1_6YFDlSkR7ifJ0P2DLuysKzrHBzCYnit/view?usp=sharing)
 
 # Load data
+
+`import torch
+import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+from torchtext.data import TabularDataset, Field, Iterator, BucketIterator, ReversibleField
+
+import pyarabic.araby as araby
+import pyarabic.number as number`
