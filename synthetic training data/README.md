@@ -7,11 +7,12 @@ The constructed training and development sets are available in .csv format in th
 
 # Load data
 
-`import torch
+```import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torchtext.data import TabularDataset, Field, Iterator, BucketIterator, ReversibleField
 
 import pyarabic.araby as araby
-import pyarabic.number as number`
+import pyarabic.number as number
+```
