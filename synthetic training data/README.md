@@ -9,7 +9,8 @@ The constructed training and development sets are available in .csv format in th
 
 Import all the required modules and packages.
  
-```import torch
+```rb
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
@@ -30,7 +31,7 @@ import pyarabic.araby as araby
 import pyarabic.number as number
 ```
 
-Then create fields, the model expects data to be fed with in the batch dimension first, so we use batch_first = True:
+Then create fields, the model expects data to be fed with in fromat of the batch dimension first, so we use batch_first = True:
 
 ```import torch
 import torch.nn as nn
